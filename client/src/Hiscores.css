@@ -1,0 +1,564 @@
+.hiscores-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hiscores-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hiscores-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #fff, #f0f0f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hiscores-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Player Search Styles */
+.player-search {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-input-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.username-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.username-input:focus {
+  background: white;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.5);
+}
+
+.search-button {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  white-space: nowrap;
+}
+
+.search-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.search-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Skill Filter Styles */
+.skill-filter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.skill-filter label {
+  font-weight: 600;
+  color: white;
+}
+
+.skill-select {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.skill-select:focus {
+  background: white;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.5);
+}
+
+/* Disabled options in dropdowns */
+.boss-select option:disabled {
+  color: #999;
+  background-color: #f5f5f5;
+  font-style: italic;
+}
+
+.skill-select option:disabled {
+  color: #999;
+  background-color: #f5f5f5;
+  font-style: italic;
+}
+
+/* Player Info Styles */
+.player-info {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.player-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.player-header h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #fff, #f0f0f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.player-details {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.player-type, .player-build, .combat-level {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Skills Grid Styles */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.skill-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.skill-level {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #4CAF50;
+  margin-bottom: 0.25rem;
+}
+
+.skill-exp {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.25rem;
+}
+
+.skill-rank {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Skill Details Styles */
+.skill-detailed-view {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.skill-icon-large {
+  font-size: 3rem;
+}
+
+.skill-header h3 {
+  font-size: 2rem;
+  margin: 0;
+  background: linear-gradient(45deg, #fff, #f0f0f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.skill-stats {
+  display: grid;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-label {
+  font-weight: 600;
+  color: white;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #4CAF50;
+}
+
+/* No Player State */
+.no-player {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 4rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.no-player p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.no-player p:last-child {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.no-data {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* View Mode Selector */
+.view-mode-selector {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  justify-content: center;
+}
+
+.mode-button {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #4a90e2;
+  background: rgba(74, 144, 226, 0.1);
+  color: #4a90e2;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.mode-button:hover {
+  background: rgba(74, 144, 226, 0.2);
+  transform: translateY(-2px);
+}
+
+.mode-button.active {
+  background: #4a90e2;
+  color: white;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+}
+
+/* Boss-related styles */
+.bosses-selector {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.boss-select {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.boss-select:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.bosses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.boss-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.boss-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #ff6b35;
+}
+
+.boss-card.selected {
+  border-color: #ff6b35;
+  background: rgba(255, 107, 53, 0.1);
+}
+
+.boss-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.boss-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.boss-kills {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ff6b35;
+  margin-bottom: 0.25rem;
+}
+
+.boss-rank {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Boss Details */
+.boss-details {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.boss-details-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.boss-icon-large {
+  font-size: 4rem;
+  background: rgba(255, 107, 53, 0.1);
+  padding: 1rem;
+  border-radius: 50%;
+  border: 3px solid #ff6b35;
+}
+
+.boss-details-info h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.boss-stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.boss-stats .stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.boss-stats .stat-label {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.boss-stats .stat-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ff6b35;
+}
+
+.no-bosses {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  margin: 2rem 0;
+  backdrop-filter: blur(10px);
+}
+
+.no-bosses p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Enhanced existing styles */
+.skill-icon-large {
+  font-size: 4rem;
+  background: rgba(74, 144, 226, 0.1);
+  padding: 1rem;
+  border-radius: 50%;
+  border: 3px solid #4a90e2;
+}
+
+/* Responsive design for boss cards */
+@media (max-width: 768px) {
+  .bosses-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.75rem;
+  }
+  
+  .boss-card {
+    padding: 1rem;
+  }
+  
+  .boss-icon {
+    font-size: 2rem;
+  }
+  
+  .boss-details-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .boss-icon-large {
+    font-size: 3rem;
+    padding: 0.75rem;
+  }
+  
+  .boss-stats {
+    justify-content: center;
+  }
+  
+  .view-mode-selector {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .mode-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hiscores-header {
+    padding: 1.5rem;
+  }
+
+  .table-header,
+  .hiscore-row {
+    grid-template-columns: 40px 1fr 50px;
+    gap: 0.5rem;
+  }
+
+  .score-col {
+    display: none;
+  }
+
+  .action-col {
+    width: 40px;
+  }
+}
